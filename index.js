@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path")
 const fileUpload = require("express-fileupload");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Use the express-fileupload middleware
 app.use(fileUpload({
