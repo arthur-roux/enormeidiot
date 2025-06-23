@@ -13,7 +13,8 @@ app.use(express.static("public"));
 app.use("/upload/", express.static("upload"));
 app.use("/placeholder/", express.static("placeholder"));
 
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
+app.set('views', __dirname + '/../views');
 
 function emptyDirectory(directory) {
     const files = fs.readdirSync(directory);
