@@ -14,7 +14,8 @@ app.use("/public/upload/", express.static(__dirname + "/public/upload"));
 app.use("/placeholder/", express.static(__dirname + "placeholder"));
 
 app.set("view engine", "ejs");
-//app.set('views', __dirname + '/views'); //helps vercel idk
+app.set('views', __dirname + '/views'); //helps vercel idk
+app.set('public', __dirname + '/public'); //helps vercel idk
 
 function emptyDirectory(directory) {
     const files = fs.readdirSync(directory);
