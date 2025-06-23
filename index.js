@@ -15,6 +15,8 @@ app.use("/placeholder/", express.static("placeholder"));
 
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views');
+app.set('upload', __dirname + '/upload');
+app.set('placeholder', __dirname + '/placeholder');
 
 function emptyDirectory(directory) {
     const files = fs.readdirSync(directory);
