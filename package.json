@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.1",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.10"
+  },
+  "name": "enormeidiot",
+  "version": "1.0.0",
+  "description": "Tu serais pas l'admin d'enormeidiot.fr ?",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "author": "Arthur",
+  "license": "ISC"
+}
