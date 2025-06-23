@@ -9,12 +9,12 @@ const port = process.env.PORT || 3000;
 app.use(fileUpload({
     createParentPath: true,
 }));
-app.use(express.static(__dirname + "public"));
-app.use("/upload/", express.static(__dirname + "upload"));
+app.use(express.static("public"));
+app.use("/public/upload/", express.static(__dirname + "/public/upload"));
 app.use("/placeholder/", express.static(__dirname + "placeholder"));
 
 app.set("view engine", "ejs");
-app.set('views', __dirname + '/views'); //helps vercel idk
+//app.set('views', __dirname + '/views'); //helps vercel idk
 
 function emptyDirectory(directory) {
     const files = fs.readdirSync(directory);
@@ -60,10 +60,10 @@ app.post('/upload', (req, res) => {
     if (image.size >8000000) return res.redirect("/");
 
     //empty upload folder
-    emptyDirectory(__dirname + "/upload/");
+    emptyDirectory(__dirname + "/public/upload/");
 
     // Move the uploaded image to our upload folder
-    imagedir = "/upload/" + image.name;
+    imagedir = "/public/upload/" + image.name;
     console.log("imagedir: " + imagedir);
     image.mv(__dirname + imagedir);
 
