@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 app.use(fileUpload({
     createParentPath: true,
 }));
-app.use(express.static("public"));
-app.use("/upload/", express.static("upload"));
-app.use("/placeholder/", express.static("placeholder"));
+app.use(express.static(__dirname + "public"));
+app.use("/upload/", express.static(__dirname + "upload"));
+app.use("/placeholder/", express.static(__dirname + "placeholder"));
 
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views'); //helps vercel idk
