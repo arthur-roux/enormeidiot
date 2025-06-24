@@ -72,7 +72,7 @@ app.post('/upload', (req, res) => {
     res.redirect("/");
 });
 
-app.post("/apropos", (req, res) => {
+app.get("/apropos", (req, res) => {
     res.render("apropos");
 });
 
